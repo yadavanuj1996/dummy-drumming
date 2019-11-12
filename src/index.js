@@ -1,3 +1,8 @@
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
+import './style.scss';
+
 const bankOne = [
   {
     keyCode: 81,
@@ -150,11 +155,11 @@ class BeatDetail extends React.Component {
     let beatName = bankOne.filter(
       element => element.keyTrigger === this.props.beatId
     );
-    let result = "Press the keys";
+    let result = "<-- Press the keys -->";
     if (beatName[0] !== undefined) result = beatName[0]["id"];
 
     return <div id="beat-type" class="row justify-content-center align-items-center">{`${result}`}</div>;
   }
 }
 
-ReactDOM.render(<Drum />, document.getElementById("drum-machine"));
+render(<Drum />, document.getElementById("drum-machine"));
